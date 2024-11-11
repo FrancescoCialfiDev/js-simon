@@ -23,7 +23,7 @@ console.log(message);
 
 
 //! STAMPIAMO SULLA PAGINA IL COUNTDOWN DEL TIMER
-let numero = 11;
+let numero = 1;
 let time = setInterval(() => {
     if (numero > 1) {
         countdown.innerHTML = --numero;
@@ -36,6 +36,7 @@ let time = setInterval(() => {
     }
   }, 1000);
 
+
 //! GENERIAMO 5 NUMERI RANDOMICI E LI INSERIAMO ALL'INTERNO DI UN ARRAY INIZIALMENTE VUOTO
   const randomNumberPc = [];
   for (let i = 0; i < 5; i++) {
@@ -44,6 +45,28 @@ let time = setInterval(() => {
   console.log(randomNumberPc);
   // ?Aggiungiamo gli elementi dell'Array all'html
   numbersList.innerHTML = randomNumberPc.join(" / "); // Customizziamo gli spazi tra i numeri
+
+  // PRENDERE BOTTONE SUBMIT TOGLIERE DEFAULT PREVENT E ALL INVIO STAMPARE I DATI IN CONSOLE
+
+  answersForm.addEventListener("submit", (event) => {
+    event.preventDefault()
+
+  })
+
+  let bottone = document.querySelector("button.btn")
+  const valori = document.querySelector("input");
+
+  bottone.addEventListener("click", (event) => {
+    event.preventDefault()
+    console.log(valori.value);
+  })
+  
+
+
+  
+  
+
+  
 
 
 
