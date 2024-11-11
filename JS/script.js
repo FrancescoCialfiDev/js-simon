@@ -53,13 +53,24 @@ let time = setInterval(() => {
 
   })
 
-  let bottone = document.querySelector("button.btn")
-  const valori = document.querySelector("input");
+  // ! FUNZIONE CLICK / ITERAZIONE VALUE ELEMENT INPUT //
+
+  const bottone = document.querySelector("button.btn");
+  // Prendiamo tutti i campi input con .querySelectorAll
+  const valori = document.querySelectorAll("input"); 
+  console.log(valori);
+  const numeriInseriti = []; 
+  
 
   bottone.addEventListener("click", (event) => {
     event.preventDefault()
-    console.log(valori.value);
-  })
+    // Iteriamo con foreach  (Ogni elemento) e poi stampiamo i valori nel nuovo array.
+    valori.forEach(input => {
+      numeriInseriti.push(input.value);
+     });
+     console.log(numeriInseriti);
+
+})
   
 
 
