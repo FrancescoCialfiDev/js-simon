@@ -58,20 +58,30 @@ let time = setInterval(() => {
   const bottone = document.querySelector("button.btn");
   // Prendiamo tutti i campi input con .querySelectorAll
   const valori = document.querySelectorAll("input"); 
-  console.log(valori);
   const numeriInseriti = []; 
+  const elementiCom = [];
+  const messaggio = document.getElementById("message")
   
 
   bottone.addEventListener("click", (event) => {
     event.preventDefault()
     // Iteriamo con foreach  (Ogni elemento) e poi stampiamo i valori nel nuovo array.
     valori.forEach(input => {
-      numeriInseriti.push(input.value);
+      numeriInseriti.push(parseInt(input.value));
      });
-     console.log(numeriInseriti);
-
+     
+     for (let i = 0; i < numeriInseriti.length; i++) {
+      if (randomNumberPc.includes(numeriInseriti[i])) {
+        elementiCom.push(numeriInseriti[i]);
+      }
+      
+    }
+    console.log(numeriInseriti);
+    messaggio.innerHTML = `I numeri che hai indovinato sono: ${elementiCom}`
 })
-  
+
+
+
 
 
   
