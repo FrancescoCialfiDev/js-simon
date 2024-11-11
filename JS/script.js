@@ -46,7 +46,7 @@ let time = setInterval(() => {
   // ?Aggiungiamo gli elementi dell'Array all'html
   numbersList.innerHTML = randomNumberPc.join(" / "); // Customizziamo gli spazi tra i numeri
 
-  // PRENDERE BOTTONE SUBMIT TOGLIERE DEFAULT PREVENT E ALL INVIO STAMPARE I DATI IN CONSOLE
+  // !PRENDERE BOTTONE SUBMIT TOGLIERE DEFAULT PREVENT E ALL INVIO STAMPARE I DATI IN CONSOLE
 
   answersForm.addEventListener("submit", (event) => {
     event.preventDefault()
