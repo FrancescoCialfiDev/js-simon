@@ -31,9 +31,10 @@ let time = setInterval(() => {
     } else {
         clearInterval(time);
         countdown.remove();
+        numbersList.remove();
+        answersForm.classList.remove("d-none")
     }
   }, 1000);
-
 
 //! GENERIAMO 5 NUMERI RANDOMICI E LI INSERIAMO ALL'INTERNO DI UN ARRAY INIZIALMENTE VUOTO
   const randomNumberPc = [];
@@ -48,7 +49,7 @@ let time = setInterval(() => {
 
 
 
-  
+
 
 
 

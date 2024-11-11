@@ -5,10 +5,13 @@
 	font-weight: bolder;
 	font-size: 5rem;
 }
+
 /* #NUMBERS */
 #numbers-list {
 	font-size: 3rem;
+	word-spacing: 20px;
 }
+
 input {
 	width: 80px !important;
 }
