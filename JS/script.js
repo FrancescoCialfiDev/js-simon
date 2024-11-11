@@ -34,7 +34,7 @@ let time = setInterval(() => {
     }
   }, 1000);
 
-  
+
 //! GENERIAMO 5 NUMERI RANDOMICI E LI INSERIAMO ALL'INTERNO DI UN ARRAY INIZIALMENTE VUOTO
   const randomNumberPc = [];
   for (let i = 0; i < 5; i++) {
@@ -42,7 +42,9 @@ let time = setInterval(() => {
   }
   console.log(randomNumberPc);
   // ?Aggiungiamo gli elementi dell'Array all'html
-  numbersList.innerHTML = randomNumberPc; 
+  numbersList.innerHTML = randomNumberPc.join(" / "); // Customizziamo gli spazi tra i numeri
+
+
 
 
 
