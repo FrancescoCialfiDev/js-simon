@@ -23,7 +23,7 @@ console.log(message);
 
 
 //! STAMPIAMO SULLA PAGINA IL COUNTDOWN DEL TIMER
-let numero = 1;
+let numero = 11;
 let time = setInterval(() => {
     if (numero > 1) {
         countdown.innerHTML = --numero;
