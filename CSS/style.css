@@ -2,16 +2,24 @@
 
 /* # COUNTDOWN */
 #countdown {
-	font-weight: bolder;
-	font-size: 5rem;
+    font-weight: bolder;
+    font-size: 5rem;
 }
 
 /* #NUMBERS */
 #numbers-list {
-	font-size: 3rem;
-	word-spacing: 20px;
+    font-size: 3rem;
+    word-spacing: 20px;
 }
 
 input {
-	width: 80px !important;
+    width: 80px !important;
+    background-color: antiquewhite;
+}
+
+body {
+    background-image: url(../img/istockphoto-859631554-612x612.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }

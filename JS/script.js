@@ -16,6 +16,7 @@ const countdown = document.getElementById('countdown')
 const numbersList = document.getElementById('numbers-list')
 const answersForm = document.getElementById('answers-form')
 const message = document.getElementById('message')
+const istruzioni = document.getElementById('instructions')
 console.log(countdown)
 console.log(numbersList)
 console.log(answersForm)
@@ -24,21 +25,22 @@ console.log(message)
 //! STAMPIAMO SULLA PAGINA IL COUNTDOWN DEL TIMER
 let numero = 10
 let time = setInterval(() => {
-    if (numero > 1) {
-        countdown.innerHTML = --numero
-        console.log(numero)
-    } else {
-        clearInterval(time)
-        countdown.remove()
-        numbersList.remove()
-        answersForm.classList.remove('d-none')
-    }
+  if (numero > 1) {
+    countdown.innerHTML = --numero
+    console.log(numero)
+  } else {
+    clearInterval(time)
+    countdown.textContent = 'TEMPO SCADUTO !!'
+    istruzioni.innerText = 'Scrivi i numeri nelle caselle'
+    numbersList.remove()
+    answersForm.classList.remove('d-none')
+  }
 }, 1000)
 
 // GENERIAMO 5 NUMERI RANDOMICI E LI INSERIAMO ALL'INTERNO DI UN ARRAY INIZIALMENTE VUOTO
 const randomNumberPc = []
 for (let i = 0; i < 5; i++) {
-    randomNumberPc.push(getRndInteger(1, 100))
+  randomNumberPc.push(getRndInteger(1, 100))
 }
 console.log(randomNumberPc)
 // ?Aggiungiamo gli elementi dell'Array all'html
@@ -47,7 +49,7 @@ numbersList.innerHTML = randomNumberPc.join(' / ') // Customizziamo gli spazi tr
 // !PRENDERE BOTTONE SUBMIT TOGLIERE DEFAULT PREVENT E ALL INVIO STAMPARE I DATI IN CONSOLE
 
 answersForm.addEventListener('submit', (event) => {
-    event.preventDefault()
+  event.preventDefault()
 })
 
 // ! FUNZIONE CLICK / ITERAZIONE VALUE ELEMENT INPUT //
@@ -60,18 +62,18 @@ const elementiCom = []
 const messaggio = document.getElementById('message')
 
 bottone.addEventListener('click', (event) => {
-    event.preventDefault()
-    // Iteriamo con foreach  (Ogni elemento) e poi stampiamo i valori nel nuovo array.
-    valori.forEach((input) => {
-        numeriInseriti.push(parseInt(input.value))
-    })
+  event.preventDefault()
+  // Iteriamo con foreach  (Ogni elemento) e poi stampiamo i valori nel nuovo array.
+  valori.forEach((input) => {
+    numeriInseriti.push(parseInt(input.value))
+  })
 
-    for (let i = 0; i < numeriInseriti.length; i++) {
-        if (randomNumberPc.includes(numeriInseriti[i])) {
-            elementiCom.push(numeriInseriti[i])
-        }
+  for (let i = 0; i < numeriInseriti.length; i++) {
+    if (randomNumberPc.includes(numeriInseriti[i])) {
+      elementiCom.push(numeriInseriti[i])
     }
+  }
 
-    console.log(numeriInseriti)
-    messaggio.innerHTML = `I numeri che hai indovinato sono: ${elementiCom}`
+  console.log(numeriInseriti)
+  messaggio.innerHTML = `I numeri che hai indovinato sono: ${elementiCom}`
 })
