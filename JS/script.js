@@ -68,12 +68,17 @@ bottone.addEventListener('click', (event) => {
     numeriInseriti.push(parseInt(input.value))
   })
 
+  let validity = false
   for (let i = 0; i < numeriInseriti.length; i++) {
     if (randomNumberPc.includes(numeriInseriti[i])) {
       elementiCom.push(numeriInseriti[i])
+      validity = true
     }
   }
 
-  console.log(numeriInseriti)
-  messaggio.innerHTML = `I numeri che hai indovinato sono: ${elementiCom}`
+  if (validity === false) {
+    message.innerText = 'Non hai indovinato nessun numero'
+  } else {
+    message.innerHTML = `I numeri che hai indovinato sono: ${elementiCom}`
+  }
 })
